@@ -1,22 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import logo from "./logo.svg";
+import "./style/style.scss";
 
 function App() {
+  const [theme, setTheme] = useState("dark");
   return (
-    <div className="App">
+    <div className={`App theme theme--${theme}`}>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <p>Test dask theme</p>
         <a
           className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+          onClick={() => setTheme(theme === "dark" ? "default" : "dark")}
         >
-          Learn React
+          Toggle theme
         </a>
       </header>
     </div>
